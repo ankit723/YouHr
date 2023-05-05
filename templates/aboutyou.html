@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock title %}
+
+{% block body %}
+
+<div class="container">
+    <h1 class="text-center my-5">Personal Details</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First_Name</th>
+            <th scope="col">Last_Name</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>{{f_name}}</td>
+            <td>{{l_name}}</td>
+            <td>{{user}}</td>
+            <td>{{email}}</td>
+        </tbody>
+    </table>
+</div>
+
+<div class="container">
+    <h1 class="text-center my-5">Application Details</h1>
+    <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Why</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in items %}
+            <tr>
+              <td>{{ item.name }}</td>
+              <td>{{ item.email }}</td>
+              <td>{{ item.role }}</td>
+              <td>{{ item.why }}</td>
+              <td>{{ item.date }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</div>
+{% endblock body %}
